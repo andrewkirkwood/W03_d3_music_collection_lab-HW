@@ -2,7 +2,8 @@ require('pry')
 require_relative('../models/album')
 require_relative('../models/artist')
 
-#add DELETE ALL for both
+Artists.delete_all()
+#######
 
 artist1 = Artist.new({ 'name' => 'Mariah'})
 
