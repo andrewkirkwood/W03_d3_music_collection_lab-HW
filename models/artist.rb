@@ -16,7 +16,7 @@ class Artist
     INSERT INTO artists (
       name
     )
-    VALUE ( $1)
+    VALUES ( $1)
     RETURNING id;
     "
     values = [@name]
