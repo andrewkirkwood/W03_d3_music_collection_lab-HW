@@ -26,10 +26,15 @@ class Album
     (
       $1, $2, $3
     )
-    RETURNING id;
+    RETURNING id
     "
     values = [@name, @genre, @artist_id]
-    @id = SqlRunner.run(sql, values)[0]['id'].to_i
+    @id = SqlRunner.run(sql, values)[0]["id"].to_i
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM albums;"
+    SqlRunner.run(sql)
   end
 
 end

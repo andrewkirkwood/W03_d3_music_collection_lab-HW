@@ -1,12 +1,22 @@
 require('pry')
-require_relative('../models/album')
 require_relative('../models/artist')
+require_relative('../models/album')
 
-# Artist.delete_all()
-#######
+
+Artist.delete_all()
+Album.delete_all()
+
 
 artist1 = Artist.new({ 'name' => 'Mariah'})
-album1 = Album.new({ 'name' => 'Greatest Hits', 'genre' => 'Pop', 'artist_id' => artist1.id})
+artist1.save()
+
+album1 = Album.new({
+  'name' => 'Greatest Hits',
+  'genre' => 'Pop',
+  'artist_id' => artist1.id
+  })
+
+  album1.save()
 
 
 binding.pry
